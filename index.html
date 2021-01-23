@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- Modal form -->
+  <div class="modal fade" id="formModal" data-bs-backdrop="form" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark" id="modalTitle">Modal title</h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body text-dark">
+          <div>
+            <span id="points" class="d-block"></span>
+            <span id="successes" class="d-block"></span>
+          </div>
+          <div class="mt-3">
+            <form id="formUser">
+              <div class="form-group">
+                <input type="text" class="form-control mt-2" name="name" id="name" placeholder="Nombre" required>
+              </div>
+              <div class="text-end mt-3">                
+                <button type="submit" id="registerButton" class="btn btn-primary">Registrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal points -->
+  <div class="modal fade" id="pointsModal" data-bs-backdrop="points" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-dark" id="modalPoints">Ultimas 5 puntuaciones</h5>         
+        </div>
+        <div class="modal-body text-dark">
+          <div>
+            <span id="points" class="d-block"></span>
+            <span id="successes" class="d-block"></span>
+          </div>
+          <div class="mt-3">
+            <div>
+              <ul id="lastPoints">
+
+              </ul>
+            </div>
+            <div class="text-end mt-3">              
+              <button type="button" class="btn btn-primary" onclick="askPlayAgain()">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="keyboard mt-5">
+    <div class="row-custom">
+      <div class="key" data-key="81">q</div>
+      <div class="key" data-key="87">w</div>
+      <div class="key" data-key="69">e</div>
+      <div class="key" data-key="82">r</div>
+      <div class="key" data-key="84">t</div>
+      <div class="key" data-key="89">y</div>
+      <div class="key" data-key="85">u</div>
+      <div class="key" data-key="73">i</div>
+      <div class="key" data-key="79">o</div>
+      <div class="key" data-key="80">p</div>
+    </div>
+    <div class="row-custom">
+      <div class="key" data-key="65">a</div>
+      <div class="key" data-key="83">s</div>
+      <div class="key" data-key="68">d</div>
+      <div class="key" data-key="70">f</div>
+      <div class="key" data-key="71">g</div>
+      <div class="key" data-key="72">h</div>
+      <div class="key" data-key="74">j</div>
+      <div class="key" data-key="75">k</div>
+      <div class="key" data-key="76">l</div>
+    </div>
+    <div class="row-custom last">
+      <div class="key" data-key="90">z</div>
+      <div class="key" data-key="88">x</div>
+      <div class="key" data-key="67">c</div>
+      <div class="key" data-key="86">v</div>
+      <div class="key" data-key="66">b</div>
+      <div class="key" data-key="78">n</div>
+      <div class="key" data-key="77">m</div>
+      <div>
+        <button id="initButton" onclick="init()">Iniciar</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src='./simon.js'></script>
+</body>
+
+</html>
